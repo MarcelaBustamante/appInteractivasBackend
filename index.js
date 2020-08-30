@@ -1,13 +1,19 @@
-//Express
+// Required imports
 const express = require('express');
-const app = express();
-require('dotenv').config();
-
-// DataBase Configuration
 const { dbConnection } = require('./database/config');
+require('dotenv').config();
+const cors = require('cors');
+
+// Express
+const app = express();
+
+// CORS & Environment
+app.use(cors());
+
+// Database
 dbConnection();
 
-//Paths
+// Paths
 app.get('/', (req, res) => {
     res.json({
         name: "appInteractivasBackend",
