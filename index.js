@@ -10,16 +10,14 @@ const app = express();
 // CORS & Environment
 app.use(cors());
 
+// Request's Body parsing
+app.use(express.json());
+
 // Database
 dbConnection();
 
 // Paths
-app.get('/', (req, res) => {
-    res.json({
-        name: "appInteractivasBackend",
-	    version: "1.0.0"
-    })
-})
+app.use('/api/users', require('./routes/users.routes'));
 
 app.listen(process.env.PORT, () => {
     console.log('Example app listening on port ' + process.env.PORT);

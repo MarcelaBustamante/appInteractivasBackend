@@ -1,0 +1,6 @@
+## Endpoints
+
+getFormTemplate(formId) -> devuelve la estructura del formulario pasado como parámetro
+getFormResults -> devuelte las respuestas de todos los usuarios al formulario pasado como parámetro
+GET /api/users/getUsers -> Devuelve todos los usuarios
+POST /api/users/createUser -> Crea un usuario
